@@ -2,7 +2,8 @@ import json
 import requests
 from typing import Any, Tuple
 from data.data import API_ENDPOINTS
-from data.test_data_generator import generate_courier_data
+from data.test_data_generator import generate_courier_data, generate_order_data
+from itertools import chain, combinations
 
 
 def extract_response_details(response: Any) -> Tuple[int, str]:
@@ -54,3 +55,26 @@ class CourierHelper:
         courier_id = login_response.json()["id"]
         delete_response = requests.delete(API_ENDPOINTS["delete_courier"].format(id=courier_id))
         assert delete_response.status_code == 200, "Failed to delete test courier. . Status code: {response.status_code}, Response: {response.text}"
+
+
+class OrderHelper(CourierHelper):
+    @classmethod
+    def setup_class(cls):
+        super().setup_class()
+        cls.order_id = None
+
+    @classmethod
+    def teardown_class(cls):
+        super().teardown_class()
+        if cls.order_id:
+            cls.delete_order()
+
+    @classmethod
+    def delete_order(cls):
+        delete_response = requests.put(API_ENDPOINTS["cancel_order"], json={"track": cls.order_id})
+        assert delete_response.status_code == 200, f"Failed to delete test order. Status code: {delete_response.status_code}, Response: {delete_response.text}"
+
+    @staticmethod
+    def powerset(iterable):
+        s = list(iterable)
+        return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))

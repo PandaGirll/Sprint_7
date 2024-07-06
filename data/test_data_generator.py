@@ -4,7 +4,7 @@ import requests
 
 from data import data
 #from models import CourierCreateModel, OrderCreateModel
-from datetime import datetime, timedelta
+from datetime import date, timedelta
 
 
 def generate_random_string(length, letters=string.ascii_letters):
@@ -53,19 +53,19 @@ def generate_order_data():
     metro_station = random.randint(1, 200)
     phone = '+' + generate_random_numeric_string(random.randint(10, 12))
     rent_time = random.randint(1, 7)
-    delivery_date = (datetime.utcnow() + timedelta(days=random.randint(1, 30))).isoformat() + 'Z'
+    delivery_date = (date.today() + timedelta(days=random.randint(1, 7))).strftime('%Y-%m-%d')
     comment = generate_random_cyrillic_string(random.randint(0, 24))
     colors = data.ORDER_COLORS
     color = random.choices(colors, k=random.randint(0, 2))
 
-    return OrderCreateModel(
-        firstName=first_name,
-        lastName=last_name,
-        address=address,
-        metroStation=metro_station,
-        phone=phone,
-        rentTime=rent_time,
-        deliveryDate=delivery_date,
-        comment=comment,
-        color=color if color else None
-    )
+    return {
+        "firstName": first_name,
+        "lastName": last_name,
+        "address": address,
+        "metroStation": metro_station,
+        "phone": phone,
+        "rentTime": rent_time,
+        "deliveryDate": delivery_date,
+        "comment": comment,
+        "color": color if color else None
+    }

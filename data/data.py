@@ -122,6 +122,10 @@ EXPECTED_RESPONSES = {
 
     "create_order_success_code": 201,
     "create_order_success_response": {"track": 124124},
+    "create_order_missing_field_code": 400,
+    "create_order_missing_field_message": "Не заполнено обязательное поле {field}",
+    "create_order_empty_field_code": 400,
+    "create_order_empty_field_message": "Поле {field} не может быть пустым",
 
     "ping_server_success_code": 200,
     "ping_server_success_message": "pong",
