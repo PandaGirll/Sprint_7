@@ -3,7 +3,6 @@ import string
 import requests
 
 from data import data
-#from models import CourierCreateModel, OrderCreateModel
 from datetime import date, timedelta
 
 

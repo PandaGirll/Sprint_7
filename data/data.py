@@ -1,16 +1,16 @@
-# data.py
-
 BASE_URL = "https://qa-scooter.praktikum-services.ru/api/v1/"
 
 # Ручки API
 API_ENDPOINTS = {
     "create_courier": f"{BASE_URL}/courier",
     "login_courier": f"{BASE_URL}/courier/login",
-    "delete_courier": f"{BASE_URL}/courier/{{id}}",
+    "delete_created_courier": f"{BASE_URL}/courier/{{id}}",
     "list_orders": f"{BASE_URL}/orders",
     "create_order": f"{BASE_URL}/orders",
     "accept_order": f"{BASE_URL}/orders/accept/{{id}}",
     "track_order": f"{BASE_URL}/orders/track",
+    "cancel_order": f"{BASE_URL}/orders/cancel",
+    "finish_order": f"{BASE_URL}/orders/finish/{{id}}",
 }
 
 # Ожидаемые тексты ответов от API
