@@ -1,6 +1,7 @@
-import pytest
 import allure
+import pytest
 import requests
+
 from data.data import API_ENDPOINTS, EXPECTED_RESPONSES
 
 
@@ -38,7 +39,8 @@ class TestCreateCourierNegative:
     def test_create_duplicate_courier_failed(self, courier_data):
         with allure.step('Отправка запроса на создание курьера'):
             response = requests.post(API_ENDPOINTS["create_courier"], json=courier_data)
-            assert response.status_code == EXPECTED_RESPONSES["create_courier_success_code"], "Не удалось создать первого курьера"
+            assert response.status_code == EXPECTED_RESPONSES[
+                "create_courier_success_code"], "Не удалось создать первого курьера"
 
         with allure.step('Попытка создания дубликата курьера'):
             duplicate_response = requests.post(API_ENDPOINTS["create_courier"], json=courier_data)
@@ -47,7 +49,3 @@ class TestCreateCourierNegative:
             assert (duplicate_response.status_code == EXPECTED_RESPONSES["create_courier_duplicate_code"] and
                     duplicate_response.json()["message"] == EXPECTED_RESPONSES["create_courier_duplicate_message"]), \
                 f"Ошибка при попытке создания дубликата курьера. Код ответа: {duplicate_response.status_code}, сообщение: {duplicate_response.json()['message']}"
-
-        # with allure.step('Удаление созданного курьера'):
-        #     courier_id = CourierHelper.login_courier(courier_data["login"], courier_data["password"])
-        #     CourierHelper.delete_courier(courier_id)

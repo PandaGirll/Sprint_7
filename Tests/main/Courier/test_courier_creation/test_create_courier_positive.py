@@ -1,6 +1,6 @@
-import requests
 import allure
 import pytest
+import requests
 
 from data.data import API_ENDPOINTS, EXPECTED_RESPONSES
 
@@ -10,7 +10,6 @@ from data.data import API_ENDPOINTS, EXPECTED_RESPONSES
 class TestCreateCourierPositive:
     @pytest.mark.positive
     def test_create_courier_success(self, courier_data):
-
         with allure.step('Отправка запроса на создание курьера'):
             response = requests.post(API_ENDPOINTS["create_courier"], json=courier_data)
 

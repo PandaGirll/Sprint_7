@@ -66,18 +66,13 @@ EXPECTED_RESPONSES = {
     "cancel_order_conflict_message": "Этот заказ уже в работе",
 
     "get_orders_list_success_code": 200,
-    "get_orders_list_success_response": {
-        "orders": [
-            {"id": 5, "courierId": None, "firstName": "вфцфвц", "lastName": "вфцвфцв", "address": "вфцвфцвфц",
-             "metroStation": "4", "phone": "1441412414", "rentTime": 4, "deliveryDate": "2020-06-08T21:00:00.000Z",
-             "track": 189237, "color": "", "comment": "вфцвфцвфцв", "createdAt": "2020-06-21T13:23:09.404Z",
-             "updatedAt": "2020-06-21T13:23:09.404Z", "status": 0}
-        ],
-        "pageInfo": {"page": 0, "total": 3, "limit": 2},
-        "availableStations": ""
-    },
+    "get_orders_list_success_response": {"orders": list},
+
     "get_orders_list_courier_not_found_code": 404,
-    "get_orders_list_courier_not_found_message": "Курьер с идентификатором {courierId} не найден",
+    "get_orders_list_courier_not_found_message": "Курьер с идентификатором {} не найден",
+    "get_orders_list_bad_request_code": 500,
+    "get_orders_list_bad_request_message": "Некорректные параметры запроса",
+
 
     "get_order_by_track_success_code": 200,
     "get_order_by_track_success_response": {
@@ -126,6 +121,9 @@ EXPECTED_RESPONSES = {
     "create_order_missing_field_message": "Не заполнено обязательное поле {field}",
     "create_order_empty_field_code": 400,
     "create_order_empty_field_message": "Поле {field} не может быть пустым",
+    "create_order_server_error_code": 500,
+    "create_order_server_error_message": "invalid input syntax for type integer",
+    "create_order_server_error_message_date": "invalid input syntax for type timestamp with time zone",
 
     "ping_server_success_code": 200,
     "ping_server_success_message": "pong",
@@ -136,3 +134,9 @@ EXPECTED_RESPONSES = {
 
 ORDER_COLORS = ["BLACK", "GREY"]
 
+ORDER_STATUSES = {
+    "CREATED": 0,
+    "ACCEPTED": 1,
+    "COMPLETED": 2,
+    "CANCELLED": -1
+}
