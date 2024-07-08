@@ -11,7 +11,7 @@ class TestLoginCourierNegative:
 
     @pytest.mark.negative
     def test_courier_login_missing_login_field(self, setup_and_teardown_courier):
-        _, courier = setup_and_teardown_courier
+        courier = setup_and_teardown_courier
         with allure.step('Отправка запроса на логин без поля login'):
             response = requests.post(API_ENDPOINTS["login_courier"], json={
                 "password": courier["password"]
@@ -24,7 +24,7 @@ class TestLoginCourierNegative:
 
     @pytest.mark.negative
     def test_courier_login_empty_login(self, setup_and_teardown_courier):
-        _, courier = setup_and_teardown_courier
+        courier = setup_and_teardown_courier
         with allure.step('Отправка запроса на логин с пустым login'):
             response = requests.post(API_ENDPOINTS["login_courier"], json={
                 "login": "",
@@ -38,7 +38,7 @@ class TestLoginCourierNegative:
 
     @pytest.mark.negative
     def test_courier_login_missing_password_field(self, setup_and_teardown_courier):
-        _, courier = setup_and_teardown_courier
+        courier = setup_and_teardown_courier
         with allure.step('Отправка запроса на логин без поля password'):
             response = requests.post(API_ENDPOINTS["login_courier"], json={
                 "login": courier["login"]
@@ -51,7 +51,7 @@ class TestLoginCourierNegative:
 
     @pytest.mark.negative
     def test_courier_login_empty_password(self, setup_and_teardown_courier):
-        _, courier = setup_and_teardown_courier
+        courier = setup_and_teardown_courier
         with allure.step('Отправка запроса на логин с пустым password'):
             response = requests.post(API_ENDPOINTS["login_courier"], json={
                 "login": courier["login"],

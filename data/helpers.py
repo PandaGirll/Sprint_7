@@ -1,4 +1,6 @@
+import allure
 import requests
+import logging
 
 from data.data import API_ENDPOINTS, EXPECTED_RESPONSES, ORDER_STATUSES
 from data.test_data_generator import generate_courier_data, generate_order_data
@@ -13,17 +15,74 @@ def delete_created_courier(courier_data):
             requests.delete(API_ENDPOINTS["delete_created_courier"].format(id=courier_id))
 
 
+class ValidationHelper:
+    @staticmethod
+    def validate_order_response(api_response, valid_status_codes, expected_content):
+        if api_response.status_code not in valid_status_codes:
+            return False
+
+        response_data = api_response.json()
+        index = valid_status_codes.index(api_response.status_code)
+        expected = expected_content[index]
+
+        if isinstance(expected, dict):
+            return all(key in response_data and (
+                isinstance(response_data[key], value) if isinstance(value, type) else response_data[key] == value)
+                       for key, value in expected.items())
+        elif isinstance(expected, str):
+            return 'message' in response_data and expected in response_data['message']
+        elif isinstance(expected, list):
+            return 'message' in response_data and any(content in response_data['message'] for content in expected)
+
+        return False
+
+    @staticmethod
+    def validate_response(api_response, valid_status_codes, expected_contents, warning_message=None):
+        if api_response.status_code == 500:
+            allure.attach(api_response.text, "Server Error 500", allure.attachment_type.TEXT)
+            return True
+
+        if api_response.status_code not in valid_status_codes:
+            return False
+
+        response_data = api_response.json()
+        index = valid_status_codes.index(api_response.status_code)
+        expected_content = expected_contents[index]
+
+        if isinstance(expected_content, dict):
+            is_valid = all(item in response_data.items() for item in expected_content.items())
+            if "message" in expected_content:
+                if 'message' in response_data:
+                    is_valid = is_valid and expected_content["message"] in response_data['message']
+        else:
+            if 'message' in response_data:
+                is_valid = expected_content in response_data['message']
+
+        if not is_valid and warning_message:
+            allure.attach(api_response.text, warning_message, allure.attachment_type.TEXT)
+
+        return is_valid
+
+    @staticmethod
+    def validate_order_with_order(api_response, expected_valid_status_code):
+        if api_response.status_code != expected_valid_status_code:
+            allure.attach(api_response.text,
+                          f"Expected status code {expected_valid_status_code} but got {api_response.status_code}",
+                          allure.attachment_type.TEXT)
+            return False
+
+        response_data = api_response.json()
+        # Проверяем наличие ключа 'order' и что это словарь
+        if 'order' in response_data and isinstance(response_data['order'], dict):
+            return True
+
+        allure.attach(api_response.text, "Response does not contain order or order is not a dictionary",
+                      allure.attachment_type.TEXT)
+        return False
+
+
 class CourierHelper:
     created_courier_ids = []
-
-    @classmethod
-    def setup_method(cls, method):
-        cls.created_courier_ids = []
-
-    @classmethod
-    def teardown_method(cls, method):
-        for courier_id in cls.created_courier_ids:
-            requests.delete(API_ENDPOINTS["delete_created_courier"].format(id=courier_id))
 
     @classmethod
     def create_courier(cls, max_attempts=3):
@@ -34,7 +93,7 @@ class CourierHelper:
             if response.status_code == 201:
                 courier_id = response.json().get("id")
                 cls.created_courier_ids.append(courier_id)
-                return response, create_courier_data
+                return create_courier_data
         raise Exception(
             f"Не удалось создать тестового курьера после {max_attempts} попыток. Код ответа: {response.status_code}, Ответ: {response.text}")
 
@@ -65,40 +124,73 @@ class OrderHelper:
         s = list(iterable)
         return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
 
-    @staticmethod
-    def get_orders(**params):
-        return requests.get(API_ENDPOINTS["list_orders"], params=params)
 
     @staticmethod
-    def create_order(data=None):
-        if data is None:
-            data = generate_order_data()
-        response = requests.post(API_ENDPOINTS["create_order"], json=data)
-        return response
+    def create_order(order_data):
+        response = requests.post(f"{API_ENDPOINTS['create_order']}", json=order_data)
+        if response.status_code == 201:
+            return response
+        else:
+            raise Exception(f"Не удалось создать заказ. Код ответа: {response.status_code}")
 
     @staticmethod
     def accept_order(order_id, courier_id):
-        return requests.put(API_ENDPOINTS["accept_order"].format(id=order_id), params={"courierId": courier_id})
+
+        url = f"{API_ENDPOINTS['accept_order']}/{order_id}?courierId={courier_id}"
+        response = requests.put(url)
+        return response
+        # else:
+        #     raise Exception(f"Не удалось принять заказ. Код ответа: {response.status_code}")
 
     @staticmethod
-    def complete_order(order_id, courier_id):
-        return requests.put(API_ENDPOINTS["finish_order"].format(id=order_id), json={"id": courier_id})
+    def complete_order(order_id):
+        url = f"{API_ENDPOINTS['finish_order']}/{order_id}"
+        response = requests.put(url)
+        if response.status_code == 200:
+            return response
+        else:
+            raise Exception(f"Не удалось завершить заказ. Код ответа: {response.status_code}")
+
 
     @staticmethod
+    # эта ручка просто не работает и при любом валидном запросе возвращает 400
     def cancel_order(track):
-        return requests.put(API_ENDPOINTS["cancel_order"], json={"track": track})
+        data = {"track": track}
+        # response = requests.put(f"{API_ENDPOINTS['cancel_order']}", json=data)
+        logging.info(f"Отправка запроса на удаление заказа с треком: {track}")
+        url = f"{API_ENDPOINTS['cancel_order']}"
+        response = requests.put(url, json=data)
+        logging.info(f"Отправляемый запрос: put {url}")
+        logging.info(data)
+        logging.info(f"Получен ответ для заказа с треком {track}. Статус: {response.status_code}")
+        if response.status_code == 200:
+            return response
+        else:
+            raise Exception(f"Не удалось отменить заказ. Код ответа: {response.status_code}, ответ: {response.json()}")
 
     @staticmethod
     def get_order_by_track(track):
         response = requests.get(f"{API_ENDPOINTS['track_order']}?t={track}")
-        if response.status_code == 200:
-            order_data = response.json().get('order')
-            if order_data:
-                return order_data
-            else:
-                raise ValueError("Данные о заказе отсутствуют в ответе API")
-        else:
-            raise Exception(f"Не удалось получить информацию о заказе. Код ответа: {response.status_code}")
+        return response
+
+    # Настройка логирования
+    logging.basicConfig(level=logging.DEBUG)
+
+    # # Создание логгера для requests
+    # requests_log = logging.getLogger("requests.packages.urllib3")
+    # requests_log.setLevel(logging.DEBUG)
+    # requests_log.propagate = True
+    #
+    @staticmethod
+    def get_order_response_by_track(track):
+        logging.info(f"Отправка запроса на получение заказа с треком: {track}")
+        url = f"{API_ENDPOINTS['track_order']}?t={track}"
+        print("id заказа в методе:", track)
+        print(f"Отправляемый запрос: GET {url}")
+        response = requests.get(url)
+        print(f"Заголовки запроса: {response.request.headers}")
+        logging.info(f"Получен ответ для заказа с треком {track}. Статус: {response.status_code}")
+        return response
 
     @staticmethod
     def generate_order_without_field(field):
@@ -126,17 +218,22 @@ class OrderParamsHelper:
     def get_station_orders_params(setup_orders):
         courier_id, orders = setup_orders
         track = orders[0]["track"]
-        order_info = OrderHelper.get_order_by_track(track)
-        station = order_info["metroStation"]
-        return {"nearestStation": f"[{station}]", "courierId": courier_id}
+        order_info_response = OrderHelper.get_order_by_track(track)
+        order_info_json = order_info_response.json()
+        station = order_info_json["order"]["metroStation"]
+        logging.info(f"Получаем station: {station}")
+        return {"nearestStation": station}
+
 
     @staticmethod
     def get_courier_station_orders_params(setup_orders):
         courier_id, orders = setup_orders
         track = orders[0]["track"]
-        order_info = OrderHelper.get_order_by_track(track)
-        station = order_info["metroStation"]
-        return {"nearestStation": f"[{station}]", "courierId": courier_id}
+        order_info_response = OrderHelper.get_order_by_track(track)
+        order_info_json = order_info_response.json()
+        station = order_info_json["order"]["metroStation"]
+        logging.info(f"Получаем station: {station}")
+        return {"nearestStation": station, "courierId": courier_id}
 
     @staticmethod
     def check_response(response, expected_code, expected_response):

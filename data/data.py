@@ -1,4 +1,4 @@
-BASE_URL = "https://qa-scooter.praktikum-services.ru/api/v1/"
+BASE_URL = "https://qa-scooter.praktikum-services.ru/api/v1"
 
 # Ручки API
 API_ENDPOINTS = {
@@ -7,10 +7,10 @@ API_ENDPOINTS = {
     "delete_created_courier": f"{BASE_URL}/courier/{{id}}",
     "list_orders": f"{BASE_URL}/orders",
     "create_order": f"{BASE_URL}/orders",
-    "accept_order": f"{BASE_URL}/orders/accept/{{id}}",
+    "accept_order": f"{BASE_URL}/orders/accept",
     "track_order": f"{BASE_URL}/orders/track",
     "cancel_order": f"{BASE_URL}/orders/cancel",
-    "finish_order": f"{BASE_URL}/orders/finish/{{id}}",
+    "finish_order": f"{BASE_URL}/orders/finish",
 }
 
 # Ожидаемые тексты ответов от API
@@ -36,7 +36,7 @@ EXPECTED_RESPONSES = {
     "delete_courier_missing_data_code": 400,
     "delete_courier_missing_data_message": "Недостаточно данных для удаления курьера",
     "delete_courier_not_found_code": 404,
-    "delete_courier_not_found_message": "Курьера с таким id нет",
+    "delete_courier_not_found_message": "Курьера с таким id нет.",
 
     "get_courier_orders_count_success_code": 200,
     "get_courier_orders_count_success_response": {"id": "123456", "ordersCount": "100500"},
@@ -73,30 +73,8 @@ EXPECTED_RESPONSES = {
     "get_orders_list_bad_request_code": 500,
     "get_orders_list_bad_request_message": "Некорректные параметры запроса",
 
-
     "get_order_by_track_success_code": 200,
-    "get_order_by_track_success_response": {
-        "order": {
-            "id": 2,
-            "firstName": "Naruto",
-            "lastName": "Uzumaki",
-            "address": "Kanoha, 142 apt.",
-            "metroStation": "1",
-            "phone": "+7 800 355 35 35",
-            "rentTime": 5,
-            "deliveryDate": "2020-06-06T00:00:00.000Z",
-            "track": 521394,
-            "status": 1,
-            "color": "",
-            "comment": "Saske, come back to Kanoha",
-            "cancelled": False,
-            "finished": False,
-            "inDelivery": False,
-            "courierFirstName": "Kaneki",
-            "createdAt": "2020-06-08T14:40:28.219Z",
-            "updatedAt": "2020-06-08T14:40:28.219Z"
-        }
-    },
+    "get_order_by_track_success_response": {"order": dict},
     "get_order_by_track_missing_data_code": 400,
     "get_order_by_track_missing_data_message": "Недостаточно данных для поиска",
     "get_order_by_track_not_found_code": 404,
