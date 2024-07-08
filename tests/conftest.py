@@ -82,11 +82,15 @@ def setup_orders_for_list_tests():
     assert len(orders) == 5, "Не все заказы были успешно созданы."
     # Принятие курьером 3 заказов
     for order in orders[:3]:
+        # Нужна задержка, иначе api не успевает обработать все заказы
+        time.sleep(3)
         response = order_helper.accept_order(order['id'], courier_id)
         assert response.status_code == 200, f"Не удалось принять заказ {order['id']} курьером {courier_id}: {response.status_code}, {response.json()}"
         print(f"Заказ {order['id']} принят курьером {courier_id}")
     # Завершение 2 заказов
     for order in orders[:2]:
+        # Нужна задержка, иначе api не успевает обработать все заказы
+        time.sleep(3)
         response = order_helper.complete_order(order['id'])
         assert response.status_code == 200, f"Не удалось завершить заказ {order['id']} курьером {courier_id}: {response.status_code}, {response.json()}"
         print(f"Заказ {order['id']} завершен курьером {courier_id}")

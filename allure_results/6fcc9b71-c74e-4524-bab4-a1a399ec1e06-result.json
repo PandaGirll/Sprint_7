@@ -1,0 +1,90 @@
+{
+  "name": "Создание заказа с пустым полем deliveryDate",
+  "status": "passed",
+  "description": "\n        Известный баг: API позволяет создать заказ с пустыми обязательными полями.\n        Ожидаемое поведение: код ответа 400 Bad Request.\n        Фактическое поведение: код ответа 201 Created \n        или 500 Internal Server Error с пустыми полями \"rentTime\", \"deliveryDate\".\n    ",
+  "steps": [
+    {
+      "name": "Генерация данных заказа с пустым полем deliveryDate",
+      "status": "passed",
+      "start": 1720479738417,
+      "stop": 1720479738418
+    },
+    {
+      "name": "Отправка запроса на создание заказа",
+      "status": "passed",
+      "start": 1720479738418,
+      "stop": 1720479738470
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479738470,
+      "stop": 1720479738470
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Предупреждение",
+      "source": "0fca04c1-814d-4805-81e7-d27b3a9cdf45-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "empty_field",
+      "value": "'deliveryDate'"
+    }
+  ],
+  "start": 1720479738417,
+  "stop": 1720479738517,
+  "uuid": "13d51688-4bf7-4ce0-a7bb-de155ef5112d",
+  "historyId": "48d360e9daf3c923a9d535d7051b5b32",
+  "testCaseId": "a714ac891b366043548fe7fd3e9acfef",
+  "fullName": "tests.tests_main.tests_orders.test_order_creation.test_create_order_negative.TestCreateOrderNegative#test_create_order_empty_field",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Создание заказа"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_creation"
+    },
+    {
+      "name": "suite",
+      "value": "test_create_order_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCreateOrderNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "85056-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_creation.test_create_order_negative"
+    }
+  ]
+}

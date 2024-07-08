@@ -1,0 +1,24 @@
+{
+  "uuid": "b243da3d-c03d-4e70-a24b-8bdbb564f221",
+  "children": [
+    "d8378fb7-e19e-4fa7-9d7d-c324aabdbd65"
+  ],
+  "befores": [
+    {
+      "name": "courier_for_deletion",
+      "status": "passed",
+      "start": 1720480607584,
+      "stop": 1720480607702
+    }
+  ],
+  "afters": [
+    {
+      "name": "courier_for_deletion::0",
+      "status": "passed",
+      "start": 1720480607780,
+      "stop": 1720480607780
+    }
+  ],
+  "start": 1720480607584,
+  "stop": 1720480607780
+}

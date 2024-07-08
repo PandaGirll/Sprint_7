@@ -1,0 +1,70 @@
+{
+  "name": "Удаление несуществующего курьера",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на удаление несуществующего курьера с id 999999",
+      "status": "passed",
+      "start": 1720479883323,
+      "stop": 1720479883378
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479883378,
+      "stop": 1720479883378
+    }
+  ],
+  "start": 1720479883323,
+  "stop": 1720479883379,
+  "uuid": "cf46165f-9982-45d7-8a5e-370d6b2abb63",
+  "historyId": "9c9a56ebc6ed754b88d16776cb5acec1",
+  "testCaseId": "9c9a56ebc6ed754b88d16776cb5acec1",
+  "fullName": "tests.tests_extra.tests_courier_extra.test_courier_deletion.test_delete_courier_negative.TestDeleteCourierNegative#test_delete_nonexistent_courier",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Удаление курьера"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_courier_extra.test_courier_deletion"
+    },
+    {
+      "name": "suite",
+      "value": "test_delete_courier_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestDeleteCourierNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_courier_extra.test_courier_deletion.test_delete_courier_negative"
+    }
+  ]
+}

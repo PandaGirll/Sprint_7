@@ -1,0 +1,70 @@
+{
+  "name": "Успешное удаление курьера",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на удаление курьера",
+      "status": "passed",
+      "start": 1720479883483,
+      "stop": 1720479883550
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479883550,
+      "stop": 1720479883550
+    }
+  ],
+  "start": 1720479883483,
+  "stop": 1720479883551,
+  "uuid": "372d5a54-1e31-4d2f-9a81-81686a649c92",
+  "historyId": "27087857dffc66c20cdabc170aee6dac",
+  "testCaseId": "27087857dffc66c20cdabc170aee6dac",
+  "fullName": "tests.tests_extra.tests_courier_extra.test_courier_deletion.test_delete_courier_positive.TestDeleteCourierPositive#test_delete_courier_success",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Удаление курьера"
+    },
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_courier_extra.test_courier_deletion"
+    },
+    {
+      "name": "suite",
+      "value": "test_delete_courier_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestDeleteCourierPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_courier_extra.test_courier_deletion.test_delete_courier_positive"
+    }
+  ]
+}

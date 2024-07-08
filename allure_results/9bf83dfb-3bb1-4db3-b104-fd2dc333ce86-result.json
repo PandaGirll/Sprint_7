@@ -1,0 +1,70 @@
+{
+  "name": "Попытка принять заказ с несуществующим id курьера",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на принятие заказа несуществующим курьером",
+      "status": "passed",
+      "start": 1720479903277,
+      "stop": 1720479903380
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479903380,
+      "stop": 1720479903380
+    }
+  ],
+  "start": 1720479903277,
+  "stop": 1720479903380,
+  "uuid": "a531b199-8d47-41fa-b915-f9cbf72a6119",
+  "historyId": "17166dea41160b81f93dc62b91e3818f",
+  "testCaseId": "17166dea41160b81f93dc62b91e3818f",
+  "fullName": "tests.tests_extra.tests_orders_extra.test_order_acceptance.test_accept_order_negative.TestAcceptOrderNegative#test_accept_order_non_existent_courier",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Принятие заказа"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_acceptance"
+    },
+    {
+      "name": "suite",
+      "value": "test_accept_order_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestAcceptOrderNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_acceptance.test_accept_order_negative"
+    }
+  ]
+}

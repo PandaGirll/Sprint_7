@@ -1,0 +1,77 @@
+{
+  "name": "Получение заказов с лимитом и номером страницы",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказов с лимитом и номером страницы",
+      "status": "passed",
+      "start": 1720480925664,
+      "stop": 1720480949210
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480949210,
+      "stop": 1720480949211
+    }
+  ],
+  "attachments": [
+    {
+      "name": "stdout",
+      "source": "fb665da2-1517-409e-a34f-53320e453af4-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "start": 1720480925664,
+  "stop": 1720480949212,
+  "uuid": "a5dde695-593d-42e1-b9eb-e75de77ed6d1",
+  "historyId": "92c9d9997e7def27a6bad7c83ecf2e43",
+  "testCaseId": "92c9d9997e7def27a6bad7c83ecf2e43",
+  "fullName": "tests.tests_main.tests_orders.test_order_list.test_list_orders_positive.TestListOrdersPositive#test_get_orders_with_limit_and_page",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Получение списка заказов"
+    },
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_list"
+    },
+    {
+      "name": "suite",
+      "value": "test_list_orders_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestListOrdersPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_list.test_list_orders_positive"
+    }
+  ]
+}

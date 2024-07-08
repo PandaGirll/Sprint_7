@@ -1,0 +1,70 @@
+{
+  "name": "Успешное принятие заказа",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на принятие заказа",
+      "status": "passed",
+      "start": 1720480650342,
+      "stop": 1720480650443
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480650443,
+      "stop": 1720480650443
+    }
+  ],
+  "start": 1720480650342,
+  "stop": 1720480650444,
+  "uuid": "c3929957-5fae-4fb3-9004-e6f973cd2ef5",
+  "historyId": "dfb0a31b84d4766bbd4d517ea1f3d889",
+  "testCaseId": "dfb0a31b84d4766bbd4d517ea1f3d889",
+  "fullName": "tests.tests_extra.tests_orders_extra.test_order_acceptance.test_accept_order_positive.TestAcceptOrderPositive#test_accept_order_success",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Принятие заказа"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_acceptance"
+    },
+    {
+      "name": "suite",
+      "value": "test_accept_order_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestAcceptOrderPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_acceptance.test_accept_order_positive"
+    }
+  ]
+}

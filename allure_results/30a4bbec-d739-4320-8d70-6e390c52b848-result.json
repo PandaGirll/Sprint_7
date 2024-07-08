@@ -1,0 +1,70 @@
+{
+  "name": "Получение заказов с некорректным ID курьера",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказов с некорректным ID курьера",
+      "status": "passed",
+      "start": 1720480777588,
+      "stop": 1720480777637
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480777637,
+      "stop": 1720480777637
+    }
+  ],
+  "start": 1720480777588,
+  "stop": 1720480777638,
+  "uuid": "7709e62b-320b-4782-b873-612e41b672b4",
+  "historyId": "6734d6d93eeb824320bda412bdf541c1",
+  "testCaseId": "6734d6d93eeb824320bda412bdf541c1",
+  "fullName": "tests.tests_main.tests_orders.test_order_list.test_list_orders_negative.TestListOrdersNegative#test_get_orders_with_invalid_courier_id",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Получение списка заказов"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_list"
+    },
+    {
+      "name": "suite",
+      "value": "test_list_orders_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestListOrdersNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_list.test_list_orders_negative"
+    }
+  ]
+}

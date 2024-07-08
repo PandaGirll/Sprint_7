@@ -1,0 +1,40 @@
+{
+  "name": "generate_order_data",
+  "status": "passed",
+  "start": 1720480052871,
+  "stop": 1720480052872,
+  "uuid": "9fe4085c-191a-43e6-b069-e890bc6e93f4",
+  "historyId": "602bd90b085b012966c63807cbf84109",
+  "testCaseId": "602bd90b085b012966c63807cbf84109",
+  "fullName": "tests.tests_main.tests_orders.test_order_creation.test_create_order_positive#generate_order_data",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_creation"
+    },
+    {
+      "name": "suite",
+      "value": "test_create_order_positive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_creation.test_create_order_positive"
+    }
+  ]
+}

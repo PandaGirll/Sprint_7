@@ -1,0 +1,76 @@
+{
+  "name": "test_create_courier_missing_password",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Генерация данных курьера без пароля",
+      "status": "passed",
+      "start": 1720480654003,
+      "stop": 1720480654003
+    },
+    {
+      "name": "Отправка запроса на создание курьера",
+      "status": "passed",
+      "start": 1720480654003,
+      "stop": 1720480654042
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480654042,
+      "stop": 1720480654042
+    }
+  ],
+  "start": 1720480654003,
+  "stop": 1720480654042,
+  "uuid": "0b832231-a6ff-4e1c-aa6c-3f8577697a81",
+  "historyId": "a4a22e0f9eda139c43c358a8695dcf96",
+  "testCaseId": "a4a22e0f9eda139c43c358a8695dcf96",
+  "fullName": "tests.tests_main.tests_courier.test_courier_creation.test_create_courier_negative.TestCreateCourierNegative#test_create_courier_missing_password",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Создание курьера"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_courier.test_courier_creation"
+    },
+    {
+      "name": "suite",
+      "value": "test_create_courier_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCreateCourierNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_courier.test_courier_creation.test_create_courier_negative"
+    }
+  ]
+}

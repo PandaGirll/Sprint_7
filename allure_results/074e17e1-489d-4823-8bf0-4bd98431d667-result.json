@@ -1,0 +1,67 @@
+{
+  "name": "Получение заказов с лимитом и номером страницы",
+  "status": "failed",
+  "statusDetails": {
+    "message": "AssertionError: Не удалось получить детали заказа: {'code': 404, 'message': 'Заказ не найден'}\nassert 404 == 200\n +  where 404 = <Response [404]>.status_code",
+    "trace": "@pytest.fixture(scope=\"function\")\n    def setup_orders_for_list_tests():\n        # Setup\n        courier_helper = CourierHelper()\n        order_helper = OrderHelper()\n        # Создание курьера\n        new_courier = courier_helper.create_courier()\n        assert new_courier, \"Ошибка при создании курьера.\"\n        print(f\"Курьер создан: {new_courier}\")\n        # Логин курьера для получения id\n        courier_id = courier_helper.login_courier(new_courier[\"login\"], new_courier[\"password\"])\n        assert courier_id, \"Ошибка при логине курьера.\"\n        print(f\"Курьер вошел в систему с ID: {courier_id}\")\n        # Создание 5 заказов\n        orders = []\n        for _ in range(5):\n            order_data = generate_order_data()\n            response = order_helper.create_order(order_data)\n            assert response.status_code == 201, f\"Не удалось создать заказ: {response.json()}\"\n            track = response.json()['track']\n            print(f\"Создан заказ с треком: {track}\")\n            # Нужна задержка, иначе api не успевает обработать все заказы\n            time.sleep(5)\n            # Получение информации о заказе по его номеру (track)\n            order_details = order_helper.get_order_by_track(track)\n>           assert order_details.status_code == 200, f\"Не удалось получить детали заказа: {order_details.json()}\"\nE           AssertionError: Не удалось получить детали заказа: {'code': 404, 'message': 'Заказ не найден'}\nE           assert 404 == 200\nE            +  where 404 = <Response [404]>.status_code\n\ntests\\conftest.py:77: AssertionError"
+  },
+  "attachments": [
+    {
+      "name": "stdout",
+      "source": "7ac2d837-7ac1-46be-a439-3773b4b719b0-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "start": 1720480366223,
+  "stop": 1720480366223,
+  "uuid": "c1f37699-64ed-44d3-8db3-6231c153eb60",
+  "historyId": "92c9d9997e7def27a6bad7c83ecf2e43",
+  "testCaseId": "92c9d9997e7def27a6bad7c83ecf2e43",
+  "fullName": "tests.tests_main.tests_orders.test_order_list.test_list_orders_positive.TestListOrdersPositive#test_get_orders_with_limit_and_page",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Получение списка заказов"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_list"
+    },
+    {
+      "name": "suite",
+      "value": "test_list_orders_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestListOrdersPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "86244-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_list.test_list_orders_positive"
+    }
+  ]
+}

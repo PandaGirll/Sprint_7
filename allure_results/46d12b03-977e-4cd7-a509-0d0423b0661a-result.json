@@ -1,0 +1,70 @@
+{
+  "name": "test_create_courier_success",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на создание курьера",
+      "status": "passed",
+      "start": 1720480714391,
+      "stop": 1720480714456
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480714456,
+      "stop": 1720480714456
+    }
+  ],
+  "start": 1720480714391,
+  "stop": 1720480714457,
+  "uuid": "9a88270a-3576-47f9-8db1-7ba65eabc4ca",
+  "historyId": "bd040cc518b8ccb93cdcd13c3f4c7c5c",
+  "testCaseId": "bd040cc518b8ccb93cdcd13c3f4c7c5c",
+  "fullName": "tests.tests_main.tests_courier.test_courier_creation.test_create_courier_positive.TestCreateCourierPositive#test_create_courier_success",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Создание курьера"
+    },
+    {
+      "name": "story",
+      "value": "Позитивный сценарий"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_courier.test_courier_creation"
+    },
+    {
+      "name": "suite",
+      "value": "test_create_courier_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCreateCourierPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_courier.test_courier_creation.test_create_courier_positive"
+    }
+  ]
+}

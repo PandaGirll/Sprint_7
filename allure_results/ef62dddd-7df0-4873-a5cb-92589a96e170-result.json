@@ -1,0 +1,82 @@
+{
+  "name": "Создание заказа с цветом: ('BLACK',)",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Генерация данных заказа с цветом ('BLACK',)",
+      "status": "passed",
+      "start": 1720479738582,
+      "stop": 1720479738582
+    },
+    {
+      "name": "Отправка запроса на создание заказа",
+      "status": "passed",
+      "start": 1720479738582,
+      "stop": 1720479738639
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479738639,
+      "stop": 1720479738639
+    }
+  ],
+  "parameters": [
+    {
+      "name": "color",
+      "value": "('BLACK',)"
+    }
+  ],
+  "start": 1720479738582,
+  "stop": 1720479738640,
+  "uuid": "ce8e3658-5abc-464a-b304-b3e072802e0b",
+  "historyId": "468c7cec699c49634abb0b8a1b00c23c",
+  "testCaseId": "26172779e63c89e60c01fc48424dcf5b",
+  "fullName": "tests.tests_main.tests_orders.test_order_creation.test_create_order_positive.TestCreateOrderPositive#test_create_order",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Создание заказа"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_creation"
+    },
+    {
+      "name": "suite",
+      "value": "test_create_order_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCreateOrderPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "85056-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_creation.test_create_order_positive"
+    }
+  ]
+}

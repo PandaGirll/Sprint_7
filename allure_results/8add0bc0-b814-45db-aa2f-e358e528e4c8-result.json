@@ -1,0 +1,77 @@
+{
+  "name": "Получение заказов с отрицательным значением limit",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказов с отрицательным значением limit",
+      "status": "passed",
+      "start": 1720480777786,
+      "stop": 1720480777861
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "attachments": [
+        {
+          "name": "Server Error 500",
+          "source": "11377758-6936-41d8-bbdb-adc4aa2dd47a-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "start": 1720480777861,
+      "stop": 1720480777862
+    }
+  ],
+  "start": 1720480777786,
+  "stop": 1720480777862,
+  "uuid": "8c882bc6-c15a-477c-b41b-cf0d16583bb1",
+  "historyId": "96d678059c8ef80e0e4524f6dbaf7c35",
+  "testCaseId": "96d678059c8ef80e0e4524f6dbaf7c35",
+  "fullName": "tests.tests_main.tests_orders.test_order_list.test_list_orders_negative.TestListOrdersNegative#test_get_orders_with_negative_limit",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Получение списка заказов"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_list"
+    },
+    {
+      "name": "suite",
+      "value": "test_list_orders_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestListOrdersNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_list.test_list_orders_negative"
+    }
+  ]
+}

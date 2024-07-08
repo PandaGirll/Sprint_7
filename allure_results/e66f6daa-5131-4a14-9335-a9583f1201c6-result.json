@@ -1,0 +1,70 @@
+{
+  "name": "Успешное получение заказа по номеру трека",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказа",
+      "status": "passed",
+      "start": 1720480188959,
+      "stop": 1720480189043
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480189044,
+      "stop": 1720480189044
+    }
+  ],
+  "start": 1720480188959,
+  "stop": 1720480189044,
+  "uuid": "dc7bb655-e480-433a-9e9d-1125593d2437",
+  "historyId": "484af4a3d521250cb4cee37c221569b7",
+  "testCaseId": "484af4a3d521250cb4cee37c221569b7",
+  "fullName": "tests.tests_extra.tests_orders_extra.test_order_tracking.test_track_order_positive.TestGetOrderByTrackPositive#test_get_order_by_track_success",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Получение заказа по его номеру"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_tracking"
+    },
+    {
+      "name": "suite",
+      "value": "test_track_order_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestGetOrderByTrackPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "86244-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_tracking.test_track_order_positive"
+    }
+  ]
+}
