@@ -1,0 +1,24 @@
+{
+  "uuid": "e7255768-8c5c-48a7-8194-985121894fda",
+  "children": [
+    "6a01b430-9b46-4a3c-9320-86fabf19ff29"
+  ],
+  "befores": [
+    {
+      "name": "setup_and_teardown_courier",
+      "status": "passed",
+      "start": 1720479990829,
+      "stop": 1720479990894
+    }
+  ],
+  "afters": [
+    {
+      "name": "setup_and_teardown_courier::0",
+      "status": "passed",
+      "start": 1720479990970,
+      "stop": 1720479991070
+    }
+  ],
+  "start": 1720479990829,
+  "stop": 1720479991070
+}

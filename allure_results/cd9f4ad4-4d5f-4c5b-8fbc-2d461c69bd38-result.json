@@ -1,0 +1,70 @@
+{
+  "name": "Попытка получить заказ без указания номера трека",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказа без трека",
+      "status": "passed",
+      "start": 1720480653551,
+      "stop": 1720480653614
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480653614,
+      "stop": 1720480653614
+    }
+  ],
+  "start": 1720480653551,
+  "stop": 1720480653614,
+  "uuid": "9af61226-a6d0-4c2d-91be-161348fd64c3",
+  "historyId": "622abb30f70703984da0f8555f53c282",
+  "testCaseId": "622abb30f70703984da0f8555f53c282",
+  "fullName": "tests.tests_extra.tests_orders_extra.test_order_tracking.test_track_order_negative.TestGetOrderByTrackNegative#test_get_order_by_track_without_track",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Получение заказа по его номеру"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_tracking"
+    },
+    {
+      "name": "suite",
+      "value": "test_track_order_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestGetOrderByTrackNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "83816-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_tracking.test_track_order_negative"
+    }
+  ]
+}

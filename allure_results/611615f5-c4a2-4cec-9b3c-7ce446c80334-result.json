@@ -1,0 +1,77 @@
+{
+  "name": "Удаление курьера без указания id",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на удаление курьера без id",
+      "status": "passed",
+      "start": 1720479566298,
+      "stop": 1720479566356
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479566356,
+      "stop": 1720479566356
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Ответ сервера не соответствует ожидаемому. Ожидалось: код 400, сообщение 'Недостаточно данных для удаления курьера'. Получено: код 404, сообщение 'Not Found.'.",
+      "source": "01c74988-caba-4c63-8438-129c0c60c023-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "start": 1720479566298,
+  "stop": 1720479566357,
+  "uuid": "34ecb111-45ef-4e81-a6dd-089c27950d0c",
+  "historyId": "770c56bb7d98600e977f8bb39f76f980",
+  "testCaseId": "770c56bb7d98600e977f8bb39f76f980",
+  "fullName": "tests.tests_extra.tests_courier_extra.test_courier_deletion.test_delete_courier_negative.TestDeleteCourierNegative#test_delete_courier_without_id",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Удаление курьера"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_courier_extra.test_courier_deletion"
+    },
+    {
+      "name": "suite",
+      "value": "test_delete_courier_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestDeleteCourierNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "85056-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_courier_extra.test_courier_deletion.test_delete_courier_negative"
+    }
+  ]
+}

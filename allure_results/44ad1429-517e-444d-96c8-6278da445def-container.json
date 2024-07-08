@@ -1,0 +1,24 @@
+{
+  "uuid": "9110e670-342e-4a02-8c88-7cfad48d68a4",
+  "children": [
+    "dc7bb655-e480-433a-9e9d-1125593d2437"
+  ],
+  "befores": [
+    {
+      "name": "setup_and_teardown_order_with_track",
+      "status": "passed",
+      "start": 1720480188891,
+      "stop": 1720480188958
+    }
+  ],
+  "afters": [
+    {
+      "name": "setup_and_teardown_order_with_track::0",
+      "status": "passed",
+      "start": 1720480189045,
+      "stop": 1720480189045
+    }
+  ],
+  "start": 1720480188891,
+  "stop": 1720480189045
+}

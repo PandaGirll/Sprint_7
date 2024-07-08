@@ -1,0 +1,13 @@
+{
+  "uuid": "d7797ed2-886b-4dee-8a3f-dad5dfef9c0b",
+  "befores": [
+    {
+      "name": "empty_field",
+      "status": "passed",
+      "start": 1720480777247,
+      "stop": 1720480777247
+    }
+  ],
+  "start": 1720480777247,
+  "stop": 1720480777317
+}

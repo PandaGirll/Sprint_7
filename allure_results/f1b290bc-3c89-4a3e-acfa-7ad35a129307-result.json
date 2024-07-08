@@ -1,0 +1,90 @@
+{
+  "name": "Создание заказа без поля phone",
+  "status": "passed",
+  "description": "\n        Известный баг: API позволяет создать заказ без обязательных полей.\n        Ожидаемое поведение: код ответа 400 Bad Request.\n        Фактическое поведение: код ответа 201 Created или 500 Internal Server Error.\n    ",
+  "steps": [
+    {
+      "name": "Генерация данных заказа без поля phone",
+      "status": "passed",
+      "start": 1720480311916,
+      "stop": 1720480311916
+    },
+    {
+      "name": "Отправка запроса на создание заказа",
+      "status": "passed",
+      "start": 1720480311916,
+      "stop": 1720480311974
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480311974,
+      "stop": 1720480311974
+    }
+  ],
+  "attachments": [
+    {
+      "name": "Предупреждение",
+      "source": "e40a9d86-4994-4b02-9002-99bb2f2ca1a0-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "missing_field",
+      "value": "'phone'"
+    }
+  ],
+  "start": 1720480311916,
+  "stop": 1720480311982,
+  "uuid": "404a357a-3f4c-46d5-a2ac-5f3ef61bcc5e",
+  "historyId": "64d05ec6c85dbbfd693b8183499f945a",
+  "testCaseId": "92712519e6675b6cd09204b2718e2fc0",
+  "fullName": "tests.tests_main.tests_orders.test_order_creation.test_create_order_negative.TestCreateOrderNegative#test_create_order_missing_field",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Создание заказа"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_creation"
+    },
+    {
+      "name": "suite",
+      "value": "test_create_order_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestCreateOrderNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "86244-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_creation.test_create_order_negative"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "name": "Получение заказов с некорректной станцией метро",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказов с некорректной станцией метро",
+      "status": "passed",
+      "start": 1720480053199,
+      "stop": 1720480053254
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "attachments": [
+        {
+          "name": "Server Error 500",
+          "source": "a3addf2b-4ddb-4479-8ddc-17b93b32c555-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "start": 1720480053254,
+      "stop": 1720480053255
+    }
+  ],
+  "start": 1720480053199,
+  "stop": 1720480053255,
+  "uuid": "7fc361d1-28ae-46f9-a169-7752d8938128",
+  "historyId": "a077252292c96cfa81a6d04eaf171240",
+  "testCaseId": "a077252292c96cfa81a6d04eaf171240",
+  "fullName": "tests.tests_main.tests_orders.test_order_list.test_list_orders_negative.TestListOrdersNegative#test_get_orders_with_invalid_station",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Получение списка заказов"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_list"
+    },
+    {
+      "name": "suite",
+      "value": "test_list_orders_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestListOrdersNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_list.test_list_orders_negative"
+    }
+  ]
+}

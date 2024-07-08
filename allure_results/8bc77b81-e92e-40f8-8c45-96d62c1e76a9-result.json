@@ -1,0 +1,70 @@
+{
+  "name": "test_courier_login_missing_password_field",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на логин без поля password",
+      "status": "passed",
+      "start": 1720479991136,
+      "stop": 1720480051206
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720480051206,
+      "stop": 1720480051253
+    }
+  ],
+  "start": 1720479991136,
+  "stop": 1720480051254,
+  "uuid": "3e348c03-1180-4850-9254-2460254eed1c",
+  "historyId": "49657639432d8c67c7194a075f761836",
+  "testCaseId": "49657639432d8c67c7194a075f761836",
+  "fullName": "tests.tests_main.tests_courier.test_courier_login.test_login_courier_negative.TestLoginCourierNegative#test_courier_login_missing_password_field",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Логин курьера"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_courier.test_courier_login"
+    },
+    {
+      "name": "suite",
+      "value": "test_login_courier_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestLoginCourierNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_courier.test_courier_login.test_login_courier_negative"
+    }
+  ]
+}

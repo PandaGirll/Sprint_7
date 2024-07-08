@@ -1,0 +1,24 @@
+{
+  "uuid": "daaa3d95-5aae-4abc-acce-2870f54a2c18",
+  "children": [
+    "185f10c5-67fd-4282-9be2-559b94ae5a60"
+  ],
+  "befores": [
+    {
+      "name": "order_and_courier_setup",
+      "status": "passed",
+      "start": 1720479918046,
+      "stop": 1720479926311
+    }
+  ],
+  "afters": [
+    {
+      "name": "order_and_courier_setup::0",
+      "status": "passed",
+      "start": 1720479926415,
+      "stop": 1720479929497
+    }
+  ],
+  "start": 1720479918046,
+  "stop": 1720479929497
+}

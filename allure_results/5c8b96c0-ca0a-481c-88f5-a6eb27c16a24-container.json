@@ -1,0 +1,20 @@
+{
+  "uuid": "065a2b85-38e9-4bfe-a2bb-3b3e15d7534e",
+  "children": [
+    "1df5b6aa-ac1c-450f-97da-07dca41067b1"
+  ],
+  "befores": [
+    {
+      "name": "setup_orders_for_list_tests",
+      "status": "failed",
+      "statusDetails": {
+        "message": "AssertionError: Не удалось получить детали заказа: {'code': 404, 'message': 'Заказ не найден'}\nassert 404 == 200\n +  where 404 = <Response [404]>.status_code\n",
+        "trace": "  File \"Z:\\QAPythonProjects\\qa_python_7\\Sprint_7\\venv\\Lib\\site-packages\\pluggy\\_callers.py\", line 167, in _multicall\n    teardown.throw(outcome._exception)\n  File \"Z:\\QAPythonProjects\\qa_python_7\\Sprint_7\\venv\\Lib\\site-packages\\_pytest\\setuponly.py\", line 36, in pytest_fixture_setup\n    return (yield)\n            ^^^^^\n  File \"Z:\\QAPythonProjects\\qa_python_7\\Sprint_7\\venv\\Lib\\site-packages\\pluggy\\_callers.py\", line 103, in _multicall\n    res = hook_impl.function(*args)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"Z:\\QAPythonProjects\\qa_python_7\\Sprint_7\\venv\\Lib\\site-packages\\_pytest\\fixtures.py\", line 1125, in pytest_fixture_setup\n    result = call_fixture_func(fixturefunc, request, kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"Z:\\QAPythonProjects\\qa_python_7\\Sprint_7\\venv\\Lib\\site-packages\\_pytest\\fixtures.py\", line 880, in call_fixture_func\n    fixture_result = next(generator)\n                     ^^^^^^^^^^^^^^^\n  File \"Z:\\QAPythonProjects\\qa_python_7\\Sprint_7\\tests\\conftest.py\", line 77, in setup_orders_for_list_tests\n    assert order_details.status_code == 200, f\"Не удалось получить детали заказа: {order_details.json()}\"\n"
+      },
+      "start": 1720480101706,
+      "stop": 1720480107030
+    }
+  ],
+  "start": 1720480101706,
+  "stop": 1720480107221
+}

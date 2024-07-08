@@ -1,0 +1,77 @@
+{
+  "name": "Получение заказов рядом с ближайшей станцией",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Отправка запроса на получение заказов рядом со станцией",
+      "status": "passed",
+      "start": 1720479765462,
+      "stop": 1720479788998
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479788998,
+      "stop": 1720479788998
+    }
+  ],
+  "attachments": [
+    {
+      "name": "stdout",
+      "source": "4af2c3d0-9a2d-4eb2-b525-6c1be687a59c-attachment.txt",
+      "type": "text/plain"
+    }
+  ],
+  "start": 1720479765462,
+  "stop": 1720479788999,
+  "uuid": "def95b26-d587-4739-8382-795b08d9b9ee",
+  "historyId": "e9d2299e371bf67c13a86796fc6ae64a",
+  "testCaseId": "e9d2299e371bf67c13a86796fc6ae64a",
+  "fullName": "tests.tests_main.tests_orders.test_order_list.test_list_orders_positive.TestListOrdersPositive#test_get_orders_with_nearest_station",
+  "labels": [
+    {
+      "name": "story",
+      "value": "Позитивные сценарии"
+    },
+    {
+      "name": "feature",
+      "value": "Получение списка заказов"
+    },
+    {
+      "name": "tag",
+      "value": "positive"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_main.tests_orders.test_order_list"
+    },
+    {
+      "name": "suite",
+      "value": "test_list_orders_positive"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestListOrdersPositive"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "85056-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_main.tests_orders.test_order_list.test_list_orders_positive"
+    }
+  ]
+}

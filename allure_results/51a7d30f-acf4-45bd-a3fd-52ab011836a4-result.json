@@ -1,0 +1,76 @@
+{
+  "name": "Попытка принять уже принятый заказ",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "Принятие заказа в первый раз",
+      "status": "passed",
+      "start": 1720479914826,
+      "stop": 1720479914910
+    },
+    {
+      "name": "Попытка принять уже принятый заказ",
+      "status": "passed",
+      "start": 1720479914910,
+      "stop": 1720479914985
+    },
+    {
+      "name": "Проверка ответа",
+      "status": "passed",
+      "start": 1720479914985,
+      "stop": 1720479914985
+    }
+  ],
+  "start": 1720479914826,
+  "stop": 1720479914986,
+  "uuid": "d39aba37-9d62-4c56-84cc-d2f20da5b207",
+  "historyId": "92312d50a044193159fdba5230c2918f",
+  "testCaseId": "92312d50a044193159fdba5230c2918f",
+  "fullName": "tests.tests_extra.tests_orders_extra.test_order_acceptance.test_accept_order_negative.TestAcceptOrderNegative#test_accept_already_accepted_order",
+  "labels": [
+    {
+      "name": "feature",
+      "value": "Принятие заказа"
+    },
+    {
+      "name": "story",
+      "value": "Негативные сценарии"
+    },
+    {
+      "name": "tag",
+      "value": "negative"
+    },
+    {
+      "name": "parentSuite",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_acceptance"
+    },
+    {
+      "name": "suite",
+      "value": "test_accept_order_negative"
+    },
+    {
+      "name": "subSuite",
+      "value": "TestAcceptOrderNegative"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "84588-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.tests_extra.tests_orders_extra.test_order_acceptance.test_accept_order_negative"
+    }
+  ]
+}

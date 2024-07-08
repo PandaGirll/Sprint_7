@@ -1,0 +1,40 @@
+{
+  "name": "delete_created_courier",
+  "status": "passed",
+  "start": 1720479566097,
+  "stop": 1720479566180,
+  "uuid": "550980c6-6098-45ab-9663-58b132bb6593",
+  "historyId": "29fd80d0a3afb02b66415fc04e692ae7",
+  "testCaseId": "29fd80d0a3afb02b66415fc04e692ae7",
+  "fullName": "tests.conftest#delete_created_courier",
+  "labels": [
+    {
+      "name": "parentSuite",
+      "value": "tests"
+    },
+    {
+      "name": "suite",
+      "value": "conftest"
+    },
+    {
+      "name": "host",
+      "value": "PandaPC"
+    },
+    {
+      "name": "thread",
+      "value": "85056-MainThread"
+    },
+    {
+      "name": "framework",
+      "value": "pytest"
+    },
+    {
+      "name": "language",
+      "value": "cpython3"
+    },
+    {
+      "name": "package",
+      "value": "tests.conftest"
+    }
+  ]
+}

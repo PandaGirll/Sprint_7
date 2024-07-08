@@ -1,0 +1,13 @@
+{
+  "uuid": "8b04978b-73b4-4198-95a0-31abeed5341b",
+  "befores": [
+    {
+      "name": "missing_field",
+      "status": "passed",
+      "start": 1720480052124,
+      "stop": 1720480052124
+    }
+  ],
+  "start": 1720480052124,
+  "stop": 1720480052180
+}
