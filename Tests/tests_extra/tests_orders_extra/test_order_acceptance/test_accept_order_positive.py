@@ -1,16 +1,16 @@
-import pytest
 import allure
-import requests
+import pytest
+
 from data.data import EXPECTED_RESPONSES
 from data.helpers import OrderHelper, ValidationHelper
 
 
 @allure.feature('Принятие заказа')
 @allure.story('Позитивные сценарии')
-@pytest.mark.positive
 class TestAcceptOrderPositive:
 
     @allure.title("Успешное принятие заказа")
+    @pytest.mark.positive
     def test_accept_order_success(self, order_and_courier_setup):
         order_id, courier_id = order_and_courier_setup
 

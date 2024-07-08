@@ -3,7 +3,7 @@ import pytest
 import requests
 
 from data.data import API_ENDPOINTS, EXPECTED_RESPONSES
-from data.helpers import OrderParamsHelper, ValidationHelper
+from data.helpers import OrderParamsHelper
 
 
 @allure.feature('Получение списка заказов')

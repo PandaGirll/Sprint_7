@@ -1,9 +1,10 @@
 import random
 import string
+from datetime import date, timedelta
+
 import requests
 
 from data import data
-from datetime import date, timedelta
 
 
 def generate_random_string(length, letters=string.ascii_letters):

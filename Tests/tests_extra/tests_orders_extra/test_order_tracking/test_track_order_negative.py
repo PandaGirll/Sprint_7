@@ -1,13 +1,16 @@
-import pytest
 import allure
+import pytest
+
 from data.data import EXPECTED_RESPONSES
 from data.helpers import ValidationHelper, OrderHelper
 
 
-@pytest.mark.negative
+@allure.feature('Получение заказа по его номеру')
+@allure.story('Негативные сценарии')
 class TestGetOrderByTrackNegative:
 
     @allure.title("Попытка получить заказ без указания номера трека")
+    @pytest.mark.negative
     def test_get_order_by_track_without_track(self):
         order_helper = OrderHelper()
 

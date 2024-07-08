@@ -1,20 +1,21 @@
-import time
-import logging
-import pytest
 import allure
+import pytest
+
 from data.data import EXPECTED_RESPONSES
 from data.helpers import ValidationHelper, OrderHelper
 
 
-@pytest.mark.positive
+@allure.feature('Получение заказа по его номеру')
+@allure.story('Позитивные сценарии')
 class TestGetOrderByTrackPositive:
 
     @allure.title("Успешное получение заказа по номеру трека")
+    @pytest.mark.positive
     def test_get_order_by_track_success(self, setup_and_teardown_order_with_track):
         order_helper = OrderHelper()
         order_track = setup_and_teardown_order_with_track
 
-        with allure.step('Отправка запроса на получение несуществующего заказа'):
+        with allure.step('Отправка запроса на получение заказа'):
             response = order_helper.get_order_by_track(order_track)
 
         with allure.step('Проверка ответа'):

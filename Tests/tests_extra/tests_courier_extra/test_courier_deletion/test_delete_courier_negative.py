@@ -1,6 +1,7 @@
-import pytest
 import allure
+import pytest
 import requests
+
 from data.data import API_ENDPOINTS, EXPECTED_RESPONSES
 
 

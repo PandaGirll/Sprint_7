@@ -1,10 +1,10 @@
+from itertools import chain, combinations
+
 import allure
 import requests
-import logging
 
 from data.data import API_ENDPOINTS, EXPECTED_RESPONSES, ORDER_STATUSES
 from data.test_data_generator import generate_courier_data, generate_order_data
-from itertools import chain, combinations
 
 
 def delete_created_courier(courier_data):
@@ -87,7 +87,6 @@ class CourierHelper:
     @classmethod
     def create_courier(cls, max_attempts=3):
         for attempt in range(max_attempts):
-
             create_courier_data = generate_courier_data()
             response = requests.post(API_ENDPOINTS["create_courier"], json=create_courier_data)
             if response.status_code == 201:
@@ -124,7 +123,6 @@ class OrderHelper:
         s = list(iterable)
         return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
 
-
     @staticmethod
     def create_order(order_data):
         response = requests.post(f"{API_ENDPOINTS['create_order']}", json=order_data)
@@ -135,12 +133,9 @@ class OrderHelper:
 
     @staticmethod
     def accept_order(order_id, courier_id):
-
         url = f"{API_ENDPOINTS['accept_order']}/{order_id}?courierId={courier_id}"
         response = requests.put(url)
         return response
-        # else:
-        #     raise Exception(f"Не удалось принять заказ. Код ответа: {response.status_code}")
 
     @staticmethod
     def complete_order(order_id):
@@ -151,18 +146,12 @@ class OrderHelper:
         else:
             raise Exception(f"Не удалось завершить заказ. Код ответа: {response.status_code}")
 
-
     @staticmethod
     # эта ручка просто не работает и при любом валидном запросе возвращает 400
     def cancel_order(track):
         data = {"track": track}
-        # response = requests.put(f"{API_ENDPOINTS['cancel_order']}", json=data)
-        logging.info(f"Отправка запроса на удаление заказа с треком: {track}")
         url = f"{API_ENDPOINTS['cancel_order']}"
         response = requests.put(url, json=data)
-        logging.info(f"Отправляемый запрос: put {url}")
-        logging.info(data)
-        logging.info(f"Получен ответ для заказа с треком {track}. Статус: {response.status_code}")
         if response.status_code == 200:
             return response
         else:
@@ -173,23 +162,10 @@ class OrderHelper:
         response = requests.get(f"{API_ENDPOINTS['track_order']}?t={track}")
         return response
 
-    # Настройка логирования
-    logging.basicConfig(level=logging.DEBUG)
-
-    # # Создание логгера для requests
-    # requests_log = logging.getLogger("requests.packages.urllib3")
-    # requests_log.setLevel(logging.DEBUG)
-    # requests_log.propagate = True
-    #
     @staticmethod
     def get_order_response_by_track(track):
-        logging.info(f"Отправка запроса на получение заказа с треком: {track}")
         url = f"{API_ENDPOINTS['track_order']}?t={track}"
-        print("id заказа в методе:", track)
-        print(f"Отправляемый запрос: GET {url}")
         response = requests.get(url)
-        print(f"Заголовки запроса: {response.request.headers}")
-        logging.info(f"Получен ответ для заказа с треком {track}. Статус: {response.status_code}")
         return response
 
     @staticmethod
@@ -221,9 +197,7 @@ class OrderParamsHelper:
         order_info_response = OrderHelper.get_order_by_track(track)
         order_info_json = order_info_response.json()
         station = order_info_json["order"]["metroStation"]
-        logging.info(f"Получаем station: {station}")
         return {"nearestStation": station}
-
 
     @staticmethod
     def get_courier_station_orders_params(setup_orders):
@@ -232,7 +206,6 @@ class OrderParamsHelper:
         order_info_response = OrderHelper.get_order_by_track(track)
         order_info_json = order_info_response.json()
         station = order_info_json["order"]["metroStation"]
-        logging.info(f"Получаем station: {station}")
         return {"nearestStation": station, "courierId": courier_id}
 
     @staticmethod

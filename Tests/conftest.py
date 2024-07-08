@@ -1,7 +1,7 @@
 import os
 import sys
 import time
-import logging
+
 import pytest
 
 from data.helpers import OrderHelper, CourierHelper, delete_created_courier
@@ -40,7 +40,6 @@ def setup_and_teardown_order_with_track():
     order_data = generate_order_data()
     response = order_helper.create_order(order_data)
     order_track = response.json()['track']
-    logging.info(f"Создан заказ с треком: {order_track}")
 
     yield order_track
 
@@ -48,8 +47,6 @@ def setup_and_teardown_order_with_track():
 # из-за бага api заказ невозможно отменить
 # if order_track:
 #     order_helper.cancel_order(order_track)
-#     logging.info(f"Заказ с треком {order_track} успешно отменен")
-
 
 
 @pytest.fixture(scope="function")

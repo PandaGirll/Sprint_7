@@ -1,7 +1,8 @@
-import pytest
 import allure
-from data.helpers import OrderHelper, ValidationHelper
+import pytest
+
 from data.data import EXPECTED_RESPONSES
+from data.helpers import OrderHelper, ValidationHelper
 
 
 @allure.feature('Принятие заказа')
